@@ -15,10 +15,10 @@ npm run dev
 
 ## Deploy
 
-Every push to `main` builds the app and publishes it to GitHub Pages
+Every push to `main` builds the app and pushes `dist/` to the `gh-pages` branch
 (`.github/workflows/deploy.yml`).
 
-One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+Pages serves the `gh-pages` branch (Settings → Pages → Source: Deploy from a branch → `gh-pages` / root).
 
 ## Structure
 
