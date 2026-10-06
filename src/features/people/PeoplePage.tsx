@@ -80,7 +80,7 @@ export function PeoplePage() {
     people.length === 0 ? 'empty' : deferredQuery.trim() ? 'no-match' : filter === 'pending' ? 'all-done' : 'no-match';
 
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[max(1.5rem,env(safe-area-inset-top))] pb-32 sm:px-6 sm:pt-10">
+    <div className="mx-auto max-w-3xl px-4 pt-[max(1.5rem,env(safe-area-inset-top))] pb-32 sm:px-6 sm:pt-10">
       <div className="space-y-5">
         <Header
           counts={counts}
@@ -100,13 +100,13 @@ export function PeoplePage() {
         )}
       </div>
 
-      <main className="mt-4">
+      <main className="mt-3">
         {visible.length === 0 ? (
           <EmptyState reason={emptyReason} onAdd={openAdd} />
         ) : (
-          <ul className="grid gap-3 sm:gap-4 lg:grid-cols-2">
+          <ul className="divide-y divide-slate-100 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 dark:divide-slate-800 dark:bg-slate-900 dark:ring-slate-800">
             {visible.map((person) => (
-              <li key={person.id}>
+              <li key={person.id} className="first:rounded-t-2xl last:rounded-b-2xl">
                 <PersonCard person={person} onEdit={openEdit} onDelete={openDelete} />
               </li>
             ))}
